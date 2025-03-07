@@ -1,0 +1,684 @@
+1)to find a last digits to (3 or 8) then print "lucky winner":
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int a=s.nextInt();
+	    if(a%10==3 || a%10==8){
+	        System.out.println("lucky winner");
+	        
+	    }
+	    //else if(a%10==8){
+	    //    System.out.println("luckywinner");
+	   // }
+	    else {
+	        System.out.println("not a lucky winner");
+	    }
+	    
+	}
+}
+2)grade of a student:
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int a=s.nextInt();
+	    if(a>=85){
+	        System.out.println("grade A");
+	        
+	    }
+	    else if(a>=75){
+	        System.out.println("grade B");
+	    }
+	    else if(a>=65){
+	        System.out.println("grade c");
+	    }
+	    else {
+	        System.out.println("grade D");
+	    }
+	    
+	}
+}
+3)write a program using triangle and gives the prize 1,2,3 and no prize:
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int a=s.nextInt();
+	    int b=s.nextInt();
+	    int c=s.nextInt();
+
+	    int angle=a+b+c;
+	    if(angle==180){
+	        if(a==90 || b==90 || c==90){
+	            System.out.println("prize 2");
+	        }
+	        else if(a==b && a==c && b==c){
+	            System.out.println("prize 3");
+	        }
+	        else if(a!=b && a!=c && b!=c){
+	            System.out.println("prize 1");
+	        }
+	    }
+	    else {
+	        System.out.println("no prize ");
+	    }
+	    
+	    
+	}
+}
+4)Lucass Sequence:
+**
+import java.util.*;
+public class Main {
+    public static void main(String [] args) {
+        int a=0,b=0,c=1,d;
+        int n=5;
+        System.out.print("lucass: "+ a + " " + b + " " + c + " ");
+        for(int i=3;i<n;i++) {
+            d=b+c+a;
+            System.out.print(d + " ");
+            int temp=c;
+            c=d;
+            b=temp;
+            
+        }
+    }
+}
+**
+import java.util.*;
+public class Main {
+    public static void main(String [] args) {
+        int a=0,b=0,c=1,d;
+        int n=10;
+        System.out.print("lucass: "+ a + " " + b + " " + c + " ");
+        for(int i=3;i<n;i++) {
+            d=b+c+a;
+            System.out.print(d + " ");
+            int temp=c;
+            c=d;
+            
+            b=a;
+            a=temp;
+            
+        }
+    }
+}
+5) to find the min and max of array values :
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter a size: ");
+		int n=s.nextInt();
+		int a[] = new int[5];
+		int min=0;
+		int max=0;
+		System.out.println("enter a elements: ");
+		
+		for(int i=0;i<n;i++) {
+			a[i] = s.nextInt();
+
+		}
+		min=a[0];
+		for(int i=1;i<n;i++) {
+			if(a[i]<min) {
+				min=a[i];
+			}
+		}
+		max=a[0];
+		for(int i=1;i<n;i++) {
+			if(a[i]>max) {
+				max=a[i];
+			}
+		}
+		System.out.println("the min of: " + min);
+		System.out.println("the max of: " + max);
+	}
+
+}
+6) to find the occurrance of the element in array :
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter a size: ");
+		int n=s.nextInt();
+		int a[] = new int[n];
+		
+		System.out.println("enter a elements: ");
+		
+		for(int i=0;i<n;i++) {
+			a[i] = s.nextInt();
+
+		}
+		boolean visited[]=new boolean[n];
+		for(int i=0;i<n;i++) {
+			if(visited[i]==true) {
+				continue;
+			}
+			int count=1;
+			for(int j=i+1;j<n;j++) {
+				if(a[i]==a[j]) {
+					visited[j]=true;
+					count++;
+				}
+			}
+			System.out.println(a[i]+" "+count);
+			
+		}
+		
+		
+		
+	}
+
+}
+7) two-D array:
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter n1: ");
+		System.out.println("enter n2: ");
+		int n1=s.nextInt();
+		int n2=s.nextInt();
+		int a[][] = new int[n1][n2];
+	
+		
+        System.out.println("enter a elements: ");
+		
+		for(int i=0;i<n1;i++) {
+			for(int j=0;j<n2;j++) {
+				a[i][j] = s.nextInt();
+			}
+			
+
+		}
+		for(int i=0;i<n1;i++) {
+			for(int j=0;j<n2;j++) {
+				System.out.print(a[i][j] +" ");
+			}
+			System.out.println();
+		
+		}
+		
+		
+	}
+
+}
+8) to sum the diagonal of an two-D array :
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter n1: ");
+		int n1=s.nextInt();
+		
+		System.out.println("enter n2: ");
+		int n2=s.nextInt();
+		
+		int sum=0;
+		int a[][] = new int[n1][n2];
+	
+		
+        System.out.println("enter a elements: ");
+		
+		for(int i=0;i<n1;i++) {
+			for(int j=0;j<n2;j++) {
+				a[i][j] = s.nextInt();
+			}
+			
+
+		}
+		for(int i=0;i<n1;i++) {
+			for(int j=0;j<n2;j++) {
+				if(i==j) {
+					sum += a[i][j];
+				}
+			}
+			//System.out.println();
+		
+		}
+		
+		System.out.println(sum);
+	}
+
+}
+10)  to sum the reverse diagonal of an two-D array :
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter n1: ");
+		int n1=s.nextInt();
+		
+		System.out.println("enter n2: ");
+		int n2=s.nextInt();
+		
+		int sum=0;
+		int a[][] = new int[n1][n2];
+	
+		
+        System.out.println("enter a elements: ");
+		
+		for(int i=0;i<n1;i++) {
+			for(int j=0;j<n2;j++) {
+				a[i][j] = s.nextInt();
+			}
+			
+
+		}
+		for(int i=0;i<n1;i++) {
+			for(int j=0;j<n2;j++) {
+				if(i+j == n1-1) {
+					sum += a[i][j];
+				}
+			}
+			//System.out.println();
+		
+		}
+		
+		System.out.println(sum);
+	}
+
+}
+11) to sum the lower triangle of a martix:
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter n1: ");
+		int n1=s.nextInt();
+		
+		System.out.println("enter n2: ");
+		int n2=s.nextInt();
+		
+		int sum=0;
+		int a[][] = new int[n1][n2];
+	
+		
+        System.out.println("enter a elements: ");
+		
+		for(int i=0;i<n1;i++) {
+			for(int j=0;j<n2;j++) {
+				a[i][j] = s.nextInt();
+			}
+			
+
+		}
+		for(int i=0;i<n1;i++) {
+			for(int j=0;j<n2;j++) {
+				
+				System.out.print(a[i][j] +" ");
+			}
+			System.out.println();
+		
+		}
+		for(int i=0;i<n1;i++) {
+			for(int j=0;j<=i;j++) {
+				
+					sum += a[i][j];
+				
+			}
+			//System.out.println();
+		
+		}
+		System.out.println("sum of dia: " +sum);
+	}
+
+}
+12)  to sum the upper triangle of a martix:
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter n1: ");
+		int n1=s.nextInt();
+		
+		System.out.println("enter n2: ");
+		int n2=s.nextInt();
+		
+		int sum=0;
+		int a[][] = new int[n1][n2];
+	
+		
+        System.out.println("enter a elements: ");
+		
+		for(int i=0;i<n1;i++) {
+			for(int j=0;j<n2;j++) {
+				a[i][j] = s.nextInt();
+			}
+			
+
+		}
+		for(int i=0;i<n1;i++) {
+			for(int j=0;j<n2;j++) {
+				
+				System.out.print(a[i][j] +" ");
+			}
+			System.out.println();
+		
+		}
+		for(int i=0;i<n1;i++) {
+			for(int j=i;j<n2;j++) {
+				
+					sum += a[i][j];
+				
+			}
+			//System.out.println();
+		
+		}
+		System.out.println("sum of dia: " +sum);
+	}
+
+}
+output:
+
+enter n1: 
+3 
+enter n2: 
+3
+enter a elements: 
+1 2 3 4 5 6 7 8 9
+1 2 3 
+4 5 6 
+7 8 9 
+sum of dia: 26
+
+13)to sum the rows of element in 2D array :
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter n1: ");
+		int n1=s.nextInt();
+		
+		System.out.println("enter n2: ");
+		int n2=s.nextInt();
+		
+		int sum=0;
+		int a[][] = new int[n1][n2];
+	
+		
+        System.out.println("enter a elements: ");
+		
+		for(int i=0;i<n1;i++) {
+			for(int j=0;j<n2;j++) {
+				a[i][j] = s.nextInt();
+			}
+			
+
+		}
+		for(int i=0;i<n1;i++) {
+			for(int j=0;j<n2;j++) {
+				
+				System.out.print(a[i][j] +" ");
+			}
+			System.out.println();
+		
+		}
+		for(int i=0;i<n1;i++) {
+			for(int j=i;j<n2;j++) {
+				
+					sum += a[i][j];
+				
+			}
+			System.out.println("sum of row: " + sum );
+		
+		}
+		//System.out.println("sum of dia: " +sum);
+	}
+
+}
+output:
+
+enter n1: 
+3
+enter n2: 
+3
+enter a elements: 
+1 2 3 4 5 6 7 8 9
+1 2 3 
+4 5 6 
+7 8 9 
+sum of row: 6
+sum of row: 17
+sum of row: 26
+14) program to count the vowels of the string:
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter string: ");
+		String str=s.nextLine();
+		String str1=str.toLowerCase();
+		int count=0;
+		
+		for(int i=0;i<str1.length();i++) {
+			if(str1.charAt(i)=='a' || str1.charAt(i)=='e' || str1.charAt(i)=='i' || str1.charAt(i)=='o'  || str1.charAt(i)=='u') {
+				count++;
+			}
+			
+		}
+		System.out.println(count);
+		
+		
+		
+		
+		
+		
+	}
+
+}
+output:
+
+enter string: 
+HEllo
+2
+
+15)string to find palindrome or not :
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter string: ");
+		String str=s.nextLine();
+		String str1=new StringBuffer(str).reverse().toString();
+		System.out.println(str1);
+		if(str.equalsIgnoreCase(str1)) {
+			System.out.println("palindrome");
+		}
+		else {
+			System.out.println("not a palindrome");
+		}
+			
+	}
+
+}
+output:
+
+enter string: 
+madam
+madam
+palindrome
+
+16)removes all the space in the string using replaceAll():
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter string: ");
+		String str=s.nextLine();
+		String str1=str.replaceAll(" ", "");
+		
+	
+		System.out.println(str1);
+		
+			
+	}
+
+}
+output:
+enter string: 
+kite in the cloud
+kiteinthecloud
+
+17) Lexicographical Order (Dictionary Order):
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter string: ");
+		String str=s.nextLine();
+		System.out.println("enter string: ");
+		String str1=s.nextLine();
+		
+		
+		
+	
+		System.out.println(str.compareTo(str1));
+		
+			
+	}
+
+}
+18)to check valid or invalid email i'd:
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter string: ");
+		String email=s.nextLine();
+		if(email.contains("com") || email.contains("in") || email.contains("net") || email.contains("org")) {
+			System.out.println("valid email");
+			
+		}
+		else {
+			System.out.println("invalid email");
+		}
+		
+		
+			
+	}
+
+}
+output:
+enter string: 
+vishnu@gmail.com
+valid email
+
+19)alternative of char to print yes or no:
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter string: ");
+		String str=s.nextLine();
+		for(int i=0;i<str.length();i++) {
+			
+		
+		if(str.charAt(i)==str.charAt(i+2) || str.charAt(i+1)==str.charAt(i+3)) {
+			System.out.println("yes");
+			break;
+		}
+		else {
+			System.out.println("no");
+			break;
+		}
+		
+		
+		}	
+	}
+
+}
+output:
+enter string: 
+abcde
+no
+20) array 2D
+
+
+package practice_java;
+import java.util.*;
+
+public class main {
+	public static void main(String [] args) {
+		Scanner s = new Scanner(System.in);
+		int n=s.nextInt();
+		int a[][]=new int[n][n];
+		int k=0;
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<n;j++) {
+				a[i][j]=s.nextInt();
+				if(a[i][j] < 11) {
+					k += a[i][j];
+				}
+			}
+		}
+		System.out.println(k);
+		
+	}
+
+}
