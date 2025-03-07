@@ -1,4 +1,4 @@
-package com.steller;
+package day3;
 import java.util.*;
 import java.util.Scanner;
 public class Day3 {
